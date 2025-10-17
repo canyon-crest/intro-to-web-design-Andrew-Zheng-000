@@ -91,6 +91,9 @@ h3:hover{
 .highlight:hover{
     color:aqua;
 }
+.bold{
+    font-weight: bold;
+}
 #sidebar{
     background-color: #000;
     width:225px;
