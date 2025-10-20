@@ -189,23 +189,53 @@ h3:hover{
         padding:none;
         width:96%;
     }
+
+    /* Disable animated gradient on very small screens */
+    .gradient-text {
+      background: none !important;
+      -webkit-background-clip: initial !important;
+      background-clip: initial !important;
+      -webkit-text-fill-color: inherit !important;
+      color: inherit !important;
+      animation: none !important;
+    }
 }
 /* Animated gradient title */
-/* Animated gradient title */
+/* keep the h1 box styling from the original h1 rule; apply the moving gradient to the inner span */
 h1.gradient{
-  font-size:2.4rem;
-  margin:0 0 8px;
+  /* ensure the title box stays centered and retains the black background */
+  background-color: black;
+  border:#fff solid 3px;
+  border-radius: 15px;
+  padding: 20px;
+  width: 60%;
+  text-align:center;
+  margin:10px auto 0;
+  font-family:'Times New Roman', Times, serif;
+  display:block;
+}
+
+/* gradient applied to inner span so the h1 box remains black */
+.gradient-text{
+  display:inline-block;
   background: linear-gradient(90deg, #6c5ce7, #ff6b6b, #00b894);
   background-size: 200% 200%;
   -webkit-background-clip: text;
   background-clip: text;
+  -webkit-text-fill-color: transparent;
   color: transparent;
   animation: gradientShift 6s linear infinite;
 }
+
 @keyframes gradientShift {
   0%   { background-position: 0% 50%; }
   50%  { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
+}
+
+/* respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .gradient-text { animation: none; background-size: auto; -webkit-text-fill-color: initial; color: #fff; }
 }
 
 /* Image hover effects */
