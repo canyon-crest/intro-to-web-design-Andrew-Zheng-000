@@ -190,3 +190,33 @@ h3:hover{
         width:96%;
     }
 }
+/* Animated gradient title */
+/* Animated gradient title */
+h1.gradient{
+  font-size:2.4rem;
+  margin:0 0 8px;
+  background: linear-gradient(90deg, #6c5ce7, #ff6b6b, #00b894);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: gradientShift 6s linear infinite;
+}
+@keyframes gradientShift {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Image hover effects */
+#pic1, #pic2, #pic3, .box img {
+  display: inline-block;
+  max-width: 100%;
+  border-radius: 10px;
+  transition: transform .35s cubic-bezier(.2,.9,.2,1), filter .35s ease;
+  will-change: transform, filter;
+}
+#pic1:hover, #pic2:hover, #pic3:hover, .box img:hover {
+  transform: translateY(-6px) scale(1.02);
+  filter: brightness(1.03);
+}
